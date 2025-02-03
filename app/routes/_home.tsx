@@ -4,7 +4,7 @@ import Navbar from '~/client/components/shared/Navbar';
 
 export default function HomeLayout() {
   return (
-    <>
+    <div className=''>
       <nav className="container mx-auto">
         <Navbar smallLogo="/tabLogo.png" logoPath="/logo.png" />
       </nav>
@@ -14,7 +14,7 @@ export default function HomeLayout() {
       <div className='border-t-2 max-w-7xl mx-auto'>
         <Footer smallLogo="/tabLogo.png" logoPath="/logo.png" />
       </div>
-    </>
+    </div>
   );
 }
 

@@ -58,7 +58,7 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
           }}
         />
       </head>
-      <body>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 h-full">
         <ThemeProvider >
         {children}
         </ThemeProvider>
@@ -69,7 +69,7 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
   );
 }
 export default function App() {
-  return <Outlet />;
+  return <ThemeProvider><Outlet /></ThemeProvider>;
 }
 
 const CatchBoundary = ({
