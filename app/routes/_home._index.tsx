@@ -1,3 +1,4 @@
+import { useTheme } from "~/client/components/ThemeProvider";
 import BannerSection from "~/client/components/UI/Home/BannerSection";
 import FAQSection from "~/client/components/UI/Home/FAQSection";
 import { FeatureSection } from "~/client/components/UI/Home/FeatureSection";
@@ -10,6 +11,7 @@ import { stats } from "~/client/data/stats";
 import { whyBest } from "~/client/data/whyBest";
 
 export default function Index() {
+  const { theme } = useTheme()
   return (
     <div>
       <div style={{
@@ -19,6 +21,11 @@ export default function Index() {
         <BannerSection />
       </div>
       {/* Feature Section */}
+      <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-4">
+        <h2 className="text-xl font-semibold mb-2">Theme Demo</h2>
+        <p className="mb-2">This box will change its background color based on the current theme.</p>
+        <p className="font-bold">Current theme: {theme}</p>
+      </div>
       <FeatureSection variant="UI1" />
       <FeatureSection variant="UI2" />
       <FeatureSection variant="UI3" />

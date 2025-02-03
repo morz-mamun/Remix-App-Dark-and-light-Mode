@@ -1,9 +1,13 @@
 import { NavLink } from "@remix-run/react";
 import { useState } from "react";
 import Logo from "./Logo";
+import { useTheme } from "../ThemeProvider";
+import { IoSunnyOutline } from "react-icons/io5";
+import { FaMoon } from "react-icons/fa";
 
 export default function Navbar({ logoPath, smallLogo }: { readonly logoPath: string, readonly smallLogo: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const {theme, toggleTheme} =  useTheme();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -104,6 +108,13 @@ export default function Navbar({ logoPath, smallLogo }: { readonly logoPath: str
         </div>
        
       </NavLink>
+      <button onClick={toggleTheme}>
+      {theme === "dark" ? (
+                <IoSunnyOutline />
+              ) : (
+                <FaMoon /> 
+              )}
+      </button>
      </div>
     </nav>
   );
