@@ -45,6 +45,17 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        {/* this is for theme setting */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              const theme = localStorage.getItem('theme') || 'light';
+              document.documentElement.classList.toggle('dark', theme === 'dark');
+            })();
+          `,
+          }}
+        />
       </head>
       <body>
         {children}
